@@ -30,3 +30,14 @@ apt-get install -y dbus-x11 xauth xinit x11-xserver-utils xdg-utils \
 echo "Installing  dbus-x11 xauth xinit x11-xserver-utils xdg-utils"
 #apt-get install -y dbus-x11 xauth xinit x11-xserver-utils xdg-utils--no-cache=true
 DEBIAN_FRONTEND=noninteractive apt-get install -y --fix-missing  supervisor
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+
+sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+apt update &&  apt install google-chrome-stable -y
+
+
+wget https://chromedriver.storage.googleapis.com/103.0.5060.53/chromedriver_linux64.zip && unzip chromedriver_linux64.zip && chmod +x chromedriver && cp chromedriver /usr/bin/
+
+
+sed -i 's/"$HERE\/chrome"/"$HERE\/chrome" --disable-gpu --disable-software-rasterizer --disable-dev-shm-usage --no-sandbox/g' /opt/google/chrome/google-chrome
+
