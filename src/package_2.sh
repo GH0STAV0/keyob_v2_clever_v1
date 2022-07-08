@@ -43,7 +43,7 @@ chmod +x /root/install_add/geckodriver && cp /root/install_add/geckodriver /usr/
 echo "Install Package PIP-3 ***** pymysql pyvirtualdisplay faker-e164 Faker PySocks stem  bs4 selenium  ConfigParser lxml  speechrecognition requests pyvirtualdisplay pydub"
 pip3 install selenium==4.0.0.a1
 pip3 install pymysql pyvirtualdisplay faker-e164 Faker PySocks stem  bs4   ConfigParser lxml  speechrecognition requests \
- pyvirtualdisplay pydub pyautogui emojis emoji mysql-connector
+ pyvirtualdisplay pydub pyautogui emojis emoji mysql-connector selenium_stealth device_detector
 
 DEBIAN_FRONTEND=noninteractive apt-get install -y  \
         python-numpy \
